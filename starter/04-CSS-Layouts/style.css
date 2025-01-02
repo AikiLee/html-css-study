@@ -2,6 +2,7 @@
   /* border-top: 10px solid #1098ad; */
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 /* PAGE SECTIONS */
@@ -14,20 +15,32 @@ body {
 }
 
 .container {
-  width: 800px;
+  width: 1200px;
   /* margin-left: auto;
   margin-right: auto; */
   margin: 0 auto;
 }
 
 .main-header {
-  background-color: #f7f7f7;
+  background-color: #f7f7f7ff;
   /* padding: 20px;
   padding-left: 40px;
   padding-right: 40px; */
   padding: 20px 40px;
   margin-bottom: 60px;
   /* height: 80px; */
+  /* 子元素全部都是float会导致父级元素高度为0，也就是坍缩 */
+}
+
+.clear-collapse {
+  clear: both;
+}
+
+/* clear fix hack,使父级元素恢复高度 */
+.clearfix::after {
+    clear:both;
+    content: "";
+    display: block;
 }
 
 nav {
@@ -36,7 +49,10 @@ nav {
 }
 
 article {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    /* background-color: orange; */
+    width: 825px;
+    float: left;
 }
 
 .post-header {
@@ -45,13 +61,21 @@ article {
 }
 
 aside {
-  background-color: #f7f7f7;
+  background-color: #f7f7f7ff;
   border-top: 5px solid #1098ad;
   border-bottom: 5px solid #1098ad;
-  /* padding-top: 50px;
-  padding-bottom: 50px; */
-  padding: 50px 0;
-  width: 500px;
+  /* padding-top: 50px; */
+  /* padding-bottom: 50px; */
+  padding:  50px;
+  width: 300px;
+  float: right;
+  /* 直接取消了margin对布局中的影响，在现代的开发过程中，可以直接对所有的元素使用 */
+  /* box-sizing: border-box; */
+}
+
+footer {
+    clear:both;
+
 }
 
 /* SMALLER ELEMENTS */
@@ -184,9 +208,29 @@ a:active {
 }
 /* LVHA */
 
-.post-img {
+.author-img {
   width: 100%;
   height: auto;
+}
+.author-img {
+    float: left;
+    margin-bottom: 20px;
+}
+
+.author {
+    padding-left: 20px;
+    padding-top: 10px;
+    float: right;
+}
+
+h1 {
+    float: left;
+}
+
+
+nav {
+    float: right;
+    /* padding-left: 30px; */
 }
 
 nav a:link {
@@ -196,7 +240,7 @@ nav a:link {
 
   display: block; */
 
-  margin-right: 30px;
+  margin-right: 20px;
   margin-top: 10px;
   display: inline-block;
 }
