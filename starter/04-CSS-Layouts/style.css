@@ -52,7 +52,7 @@ article {
     margin-bottom: 60px;
     /* background-color: orange; */
     width: 825px;
-    float: left;
+    /* float: left; */
 }
 
 .post-header {
@@ -67,8 +67,8 @@ aside {
   /* padding-top: 50px; */
   /* padding-bottom: 50px; */
   padding:  50px;
-  width: 300px;
-  float: right;
+  width: 825px;
+  /* float: right; */
   /* 直接取消了margin对布局中的影响，在现代的开发过程中，可以直接对所有的元素使用 */
   /* box-sizing: border-box; */
 }
@@ -309,3 +309,51 @@ footer p {
 nav p {
   font-size: 18px;
 } */
+
+.main-header {
+    display: flex;
+    align-items:  center;
+    justify-content: space-between;
+}
+
+.author-box {
+    display: flex;
+    margin-bottom: 15px;
+}
+
+.author {
+    margin-bottom: 0;
+    margin-left: 50px;
+
+}
+
+.related-post {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.related-link:link {
+    font-size: 15px;
+    font-weight: bold;
+    font-style: normal;
+    display: block;
+}
+.row {
+    display: flex;
+    /* 不要指定特定宽度，而是使用flex固有属性来处理元素之间的长款等等 */
+    align-items: flex-start;
+}
+
+aside {
+    /* DEFAULT 
+    flex-grow
+    flew-shrink
+    flex-basis
+    */
+    flex: 0 0 300px;
+}
+article {
+    flex: 1 0 825px;
+    margin-bottom: 0;
+}

@@ -6,8 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Flexbox</title>
     <style>
+
+
       .el--1 {
         background-color: blueviolet;
+        /* 子元素自动生长，填满剩余空间 */
+        /* flex-grow: 1; */
       }
       .el--2 {
         background-color: orangered;
@@ -32,15 +36,43 @@
         background-color: crimson;
       }
 
+      .el--1 {
+        /* 针对元素本身的定位,设置为顶格 */
+        align-self: flex-start;
+      }
+      .el--2{
+        align-self: flex-end;
+      }
+      .el--5{
+        /* 拉伸到和最高元素相同 */
+        align-self: stretch;
+      }
+
       .container {
         /* STARTER */
         font-family: sans-serif;
         background-color: #ddd;
         font-size: 40px;
         margin: 40px;
-
+        display: flex;
+        /* 这会让元素自动居中，但不会改变高度确定的单位 */
+        align-items: center;
+        /* 左顶格 */
+        justify-content: flex-start;
+        gap: 10px;
         /* FLEXBOX */
       }
+
+      .el {
+            /* 整体填满空间 */
+          /* flex-grow: 1; */
+          /* 默认为1，其允许flex自动收缩元素;改为0，则不会自动收缩 */
+            /* flex-shrink: 0;*/
+            /* flex-basis: 100px; */
+            /* 简写 */
+            flex: 1 0 auto;
+            /* gap:10px; */
+        }
     </style>
   </head>
   <body>
