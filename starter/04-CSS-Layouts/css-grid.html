@@ -7,6 +7,8 @@
     <title>CSS Grid</title>
     <style>
       .el--1 {
+        /* grid-column: 2 / 4; */
+        /* grid-row: 1 / 3; */
         background-color: blueviolet;
       }
       .el--2 {
@@ -40,19 +42,34 @@
         margin: 40px;
 
         /* CSS GRID */
+        display: grid;
+        /* use fr to build reflected layout to fit for the website, it works like flex*/
+        /* grid-template-columns: 3fr 1fr 1fr auto;*/
+        /* easier written way */
+        grid-template-columns: repeat(4,1fr);
+        grid-template-rows: 1fr 1fr;
+        gap: 20px;
       }
 
       .container--2 {
         /* STARTER */
         font-family: sans-serif;
-        background-color: black;
+        background-color: #ddd;
         font-size: 40px;
-        margin: 100px;
+        margin: 40px;
 
-        width: 1000px;
+        width: 700px;
         height: 600px;
 
         /* CSS GRID */
+        display: grid;
+        grid-template-columns: 125px 200px 125px;
+        grid-template-rows: 250px 100px;
+        gap: 50px;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        justify-items: center;
       }
     </style>
   </head>
